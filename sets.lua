@@ -44,6 +44,7 @@ return {
 		'pwgen',
 		'python',
 		'sfeed',
+		'smu',
 		'squashfs-tools-ng',
 		'the_silver_searcher',
 		'unzip',

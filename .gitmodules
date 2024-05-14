@@ -48,13 +48,13 @@
 	path = pkg/dmenu/src
 	url = git://git.suckless.org/dmenu
 	ignore = all
+[submodule "pkg/dnssec-tools/src"]
+	path = pkg/dnssec-rr/src
+	url = https://git.sr.ht/~mcf/dnssec-rr
 [submodule "pkg/dosfstools/src"]
 	path = pkg/dosfstools/src
 	url = https://github.com/dosfstools/dosfstools
 	ignore = all
-[submodule "pkg/dnssec-tools/src"]
-	path = pkg/dnssec-rr/src
-	url = https://git.sr.ht/~mcf/dnssec-rr
 [submodule "pkg/e2fsprogs/src"]
 	path = pkg/e2fsprogs/src
 	url = https://git.kernel.org/pub/scm/fs/ext2/e2fsprogs.git
@@ -214,9 +214,6 @@
 	path = pkg/netbsd-curses/src
 	url = https://github.com/oasislinux/netbsd-curses.git
 	ignore = all
-[submodule "pkg/netsurf/src"]
-	path = pkg/netsurf/src
-	url = https://github.com/oasislinux/netsurf
 [submodule "pkg/netsurf/libcss/src"]
 	path = pkg/netsurf/libcss/src
 	url = git://git.netsurf-browser.org/libcss.git
@@ -248,6 +245,9 @@
 	path = pkg/netsurf/libwapcaplet/src
 	url = git://git.netsurf-browser.org/libwapcaplet.git
 	ignore = all
+[submodule "pkg/netsurf/src"]
+	path = pkg/netsurf/src
+	url = https://github.com/oasislinux/netsurf
 [submodule "pkg/nginx/src"]
 	path = pkg/nginx/src
 	url = https://github.com/nginx/nginx
@@ -303,6 +303,9 @@
 [submodule "pkg/sinit/src"]
 	path = pkg/sinit/src
 	url = git://git.suckless.org/sinit
+[submodule "pkg/smu/src"]
+	path = pkg/smu/src
+	url = https://github.com/karlb/smu.git
 [submodule "pkg/sndio/src"]
 	path = pkg/sndio/src
 	url = https://caoua.org/git/sndio
