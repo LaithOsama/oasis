@@ -49,6 +49,7 @@ return {
 		'smu',
 		'squashfs-tools-ng',
 		'the_silver_searcher',
+		'tree',
 		'unzip',
 		'vis',
 		'zstd',
