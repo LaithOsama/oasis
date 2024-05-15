@@ -39,6 +39,7 @@ return {
 		'bubblewrap',
 		'file',
 		'fuse',
+		'fzy',
 		'less',
 		'netbsd-curses',
 		'pwgen',
