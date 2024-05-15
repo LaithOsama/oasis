@@ -42,6 +42,7 @@ return {
 		'fzy',
 		'less',
 		'netbsd-curses',
+		'optipng',
 		'pwgen',
 		'python',
 		'sfeed',
