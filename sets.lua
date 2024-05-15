@@ -40,6 +40,7 @@ return {
 		'file',
 		'fuse',
 		'fzy',
+		'kiss',
 		'less',
 		'netbsd-curses',
 		'optipng',
