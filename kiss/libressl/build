@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+./configure \
+    --prefix=/usr \
+    PROG_LDADD=-all-static \
+    --sysconfdir=/etc \
+    --disable-tests
+
+
+make
+make DESTDIR="$1" install
+
+# Certs is provided elsewhere
+rm -rf "$1/etc/ssl/cacert.pem"
+
+# Compress manpages
+find "$1/usr/share/man" -type f | xargs gzip -n -9

@@ -1,0 +1,3 @@
+libpciaccess
+meson         make
+pkgconf       make

@@ -1,0 +1,13 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+meson setup \
+    -Dprefix=/usr \
+    -Ddefault_library=both \
+    -Dbzip2=disabled \
+    -Dzlib=disabled \
+    output
+
+samu -C output
+samu -C output install

@@ -1,0 +1,17 @@
+#!/bin/sh -e
+
+export DESTDIR="$1"
+
+meson setup \
+	-Dprefix=/usr \
+	-Dintel=disabled \
+	-Dnouveau=disabled \
+	-Damdgpu=disabled \
+	-Dradeon=disabled \
+	-Dvalgrind=disabled \
+	-Ddefault_library=static \
+	-Dman-pages=disabled \
+	build
+
+samu -C build
+samu -C build install

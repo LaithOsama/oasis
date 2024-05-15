@@ -1,0 +1,6 @@
+fontconfig        make
+freetype-harfbuzz make
+libX11
+libXrender        make
+pkgconf           make
+xorgproto         make
