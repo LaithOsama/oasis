@@ -118,6 +118,9 @@
 [submodule "pkg/jbig2dec/src"]
 	path = pkg/jbig2dec/src
 	url = git://git.ghostscript.com/jbig2dec.git
+[submodule "pkg/kiss/src"]
+	path = pkg/kiss/src
+	url = https://codeberg.org/kiss-community/kiss
 [submodule "pkg/libass/src"]
 	path = pkg/libass/src
 	url = https://github.com/libass/libass
@@ -361,6 +364,9 @@
 [submodule "pkg/velox/src"]
 	path = pkg/velox/src
 	url = https://github.com/michaelforney/velox
+[submodule "pkg/vi/src"]
+	path = pkg/vi/src
+	url = https://github.com/LaithOsama/nextvi.git
 [submodule "pkg/vis/src"]
 	path = pkg/vis/src
 	url = https://github.com/martanne/vis

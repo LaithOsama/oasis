@@ -51,6 +51,7 @@ return {
 		'the_silver_searcher',
 		'tree',
 		'unzip',
+		'vi',
 		'vis',
 		'zstd',
 	},
