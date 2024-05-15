@@ -1,4 +1,4 @@
-freetype-harfbuzz make
+freetype make
 libXdmcp make make
 libXfont make
 libXtst make
