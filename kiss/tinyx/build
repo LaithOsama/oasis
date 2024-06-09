@@ -13,11 +13,10 @@ export XSERVERLIBS_LIBS="/usr/lib/*.a -lz -lfreetype -lpng16"
 make
 make DESTDIR="$1" install
 
-# chmod u+s "$1/usr/bin/Xfbdev"
- chmod u+s "$1/usr/bin/Xvesa"
+chmod u+s "$1/usr/bin/Xfbdev"
 
 # not compatible
-# rm -rf    "$1/usr/bin/Xvesa"
+rm -rf    "$1/usr/bin/Xvesa"
 
 #install minimum requirement for bitmap fonts
 mkdir -p "$1/usr/share/fonts/misc"
