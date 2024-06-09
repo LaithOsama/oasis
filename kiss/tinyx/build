@@ -3,6 +3,8 @@
 export LDFLAGS="$LDFLAGS -static-pie"
 export XSERVERCFLAGS_CFLAGS="-fPIE"
 export XSERVERLIBS_LIBS="/usr/lib/*.a -lz -lfreetype -lpng16"
+export CFLAGS="$CFLAGS -I/src/oasis/out/pkg/libpng/include"
+export LDFLAGS="$LDFLAGS -L/src/oasis/out/pkg/libpng"
 
 ./configure \
   --prefix=/usr \

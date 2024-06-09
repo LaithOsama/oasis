@@ -3,6 +3,5 @@ libXdmcp make make
 libXfont make
 libXtst make
 libfontenc make
-libpng make
 xtrans make
 zlib make

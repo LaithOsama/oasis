@@ -1,6 +1,8 @@
 #!/bin/sh -e
 
 export DESTDIR="$1"
+export CFLAGS="$CFLAGS -I/src/oasis/out/pkg/libpng/include"
+export LDFLAGS="$LDFLAGS -L/src/oasis/out/pkg/libpng"
 
 meson setup \
     -Dprefix=/usr \
