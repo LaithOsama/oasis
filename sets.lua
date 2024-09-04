@@ -39,6 +39,7 @@ return {
 		'less',
 		'netbsd-curses',
 		'python',
+		'smu',
 		'squashfs-tools-ng',
 		'the_silver_searcher',
 		'unzip',

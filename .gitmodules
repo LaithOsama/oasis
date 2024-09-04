@@ -402,3 +402,6 @@
 [submodule "pkg/kiss/src"]
 	path = pkg/kiss/src
 	url = https://codeberg.org/kiss-community/kiss
+[submodule "pkg/smu/src"]
+	path = pkg/smu/src
+	url = https://github.com/karlb/smu.git
