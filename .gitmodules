@@ -399,3 +399,6 @@
 	path = pkg/zstd/src
 	url = https://github.com/facebook/zstd
 	ignore = all
+[submodule "pkg/kiss/src"]
+	path = pkg/kiss/src
+	url = https://codeberg.org/kiss-community/kiss
