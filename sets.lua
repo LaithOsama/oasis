@@ -44,6 +44,7 @@ return {
 		'the_silver_searcher',
 		'unzip',
 		'vis',
+		'vi',
 		'zstd',
 	},
 	devel={

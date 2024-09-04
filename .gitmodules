@@ -405,3 +405,6 @@
 [submodule "pkg/smu/src"]
 	path = pkg/smu/src
 	url = https://github.com/karlb/smu.git
+[submodule "pkg/vi/src"]
+	path = pkg/vi/src
+	url = https://github.com/LaithOsama/nextvi.git
