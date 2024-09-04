@@ -34,6 +34,7 @@ return {
 	extra={
 		'file',
 		'fuse',
+		'fzy',
 		'kiss',
 		'less',
 		'netbsd-curses',
