@@ -6,7 +6,7 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char font[] = "Terminus:pixelsize=14";
-static int borderpx = 2;
+static int borderpx = 18;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -54,7 +54,7 @@ static unsigned int blinktimeout = 800;
 /*
  * thickness of underline and bar cursors
  */
-static unsigned int cursorthickness = 2;
+static unsigned int cursorthickness = 1;
 
 /*
  * bell volume. It must be a value between -100 and 100. Use 0 for disabling
@@ -86,47 +86,36 @@ static unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	"#000000",
-	"#a40000",
-	"#4e9a06",
-	"#c4a000",
-	"#204a87",
-	"#ce5c00",
-	"#038e82",
-	"#eaede6",
 
-	/* 8 bright colors */
-	"#555753",
-	"#cc0000",
-	"#73d216",
-	"#edd400",
-	"#3465a4",
-	"#f57900",
-	"#05d2c1",
-	"#ffffff",
+  /* 8 normal colors */
+  [0] = "#1e2122", /* black   */
+  [1] = "#ec6b64", /* red     */
+  [2] = "#89b482", /* green   */
+  [3] = "#d6b676", /* yellow  */
+  [4] = "#7daea3", /* blue    */
+  [5] = "#d3869b", /* magenta */
+  [6] = "#749689", /* cyan    */
+  [7] = "#c7b89d", /* white   */
 
-	[255] = 0,
+  /* 8 bright colors */
+  [8]  = "#484b4c", /* black   */
+  [9]  = "#e78a4e", /* red     */
+  [10] = "#a9b665", /* green   */
+  [11] = "#d1b171", /* yellow  */
+  [12] = "#6f8faf", /* blue    */
+  [13] = "#ce8196", /* magenta */
+  [14] = "#82b3a8", /* cyan    */
+  [15] = "#c0b196", /* white   */
 
-	/* more colors can be added after 255 to use with DefaultXX */
-	"#cccccc",
-	"#555555",
-
-	/* background */
-	"#000000",
-
-	/* foreground */
-	"#babdb6"
 };
-
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-static unsigned int defaultfg = 259;
-static unsigned int defaultbg = 258;
-static unsigned int defaultcs = 256;
+unsigned int defaultfg = 7;
+unsigned int defaultbg = 0;
+static unsigned int defaultcs = 7;
 static unsigned int defaultrcs = 257;
 
 /*
@@ -136,7 +125,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
