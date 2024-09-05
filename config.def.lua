@@ -46,5 +46,5 @@ return {
 	},
 
 	-- GPU driver (possible_values: amdgpu intel nouveau)
-	-- video_drivers={intel=true}
+	video_drivers={intel=true}
 }
