@@ -1,7 +1,6 @@
 set('srcdir', '$dir')
 
 dir('bin', '755')
-sym('bin/plumb', '../etc/plumb')
 dir('boot', '755')
 dir('dev', '755')
 dir('etc', '755')
@@ -16,7 +15,6 @@ dir('var', '755')
 dir('var/db', '755')
 dir('var/empty', '755')
 dir('var/log', '755')
-sym('usr/bin', '../bin')
 
 gitfile('.gitignore', '644', '$dir/gitignore')
 
