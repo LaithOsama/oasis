@@ -1,0 +1,67 @@
+name: Oasis CI
+
+on:
+  push:
+    branches: master
+  pull_request:
+    branches: master
+
+env:
+  SETS: core extra devel media net desktop
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
+    - name: Set up environment
+      run: |
+        sudo apt-get install -y bison curl libarchive-tools lua5.1 nasm ninja-build wayland-protocols libwayland-dev libpng-dev
+        git config --global user.name "oasis"
+        git config --global user.email "oasis"
+        git clone --mirror --no-single-branch --depth 1 https://github.com/LaithOsama/root-x86_64 root-x86_64.git
+        curl -LO http://musl.cc/x86_64-linux-musl-cross.tgz
+        tar xzf x86_64-linux-musl-cross.tgz
+        echo "$HOME/x86_64-linux-musl-cross/bin:$HOME/bin" >> $GITHUB_PATH
+        echo "PATH=$PWD/x86_64-linux-musl-cross/bin:$HOME/bin:$PATH" >> $GITHUB_ENV
+    - name: Build
+      run: |
+        cat >config.lua <<EOF
+        return {
+          builddir='out',
+          fs=dofile 'fs.lua',
+          target={platform='x86_64-linux-musl', cflags='-Os -fPIE -pipe', ldflags='-s -static-pie', mc='6m', pie=true},
+          host={cflags='-pipe', ldflags=''},
+          repo={path='$PWD/root-x86_64.git', flags='--bare', tag='tree', branch=os.getenv('SET')},
+        }
+        EOF
+        echo 'return {exclude={}}' >fs.lua
+        SET=all lua setup.lua
+        ninja out/pkg/mc/bin/6m out/pkg/mc/bin/muse
+        mkdir $HOME/bin
+        cp out/pkg/mc/bin/6m out/pkg/mc/bin/muse $HOME/bin
+        ninja
+        cat >fs.lua <<EOF
+        local sets = dofile 'sets.lua'
+        local set = os.getenv('SET')
+        local spec = {sets[set]}
+        if set ~= 'devel' then
+          spec.exclude = {'^include/', '^lib/.*%.a$'}
+        end
+        return {spec}
+        EOF
+        for SET in $SETS ; do
+          export SET
+          lua setup.lua
+          ninja commit
+        done
+    - name: Deploy
+      if: github.event_name == 'push' && github.ref == 'refs/heads/master'
+      env:
+        TOKEN: ${{ secrets.TOKEN }}
+      run: |
+        git -C root-x86_64.git push https://x-access-token:${TOKEN}@github.com/LaithOsama/root-x86_64.git $SETS
