@@ -41,6 +41,7 @@ jobs:
         EOF
         echo 'return {exclude={}}' >fs.lua
         SET=all lua setup.lua
+        sed -i 's/curl /&-k /' scripts/fetch-curl.sh 
         ninja out/pkg/mc/bin/6m out/pkg/mc/bin/muse
         mkdir $HOME/bin
         cp out/pkg/mc/bin/6m out/pkg/mc/bin/muse $HOME/bin
