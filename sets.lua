@@ -39,6 +39,7 @@ return {
 		'bubblewrap',
 		'file',
 		'fuse',
+		'fzy',
 		'kiss',
 		'less',
 		'netbsd-curses',
