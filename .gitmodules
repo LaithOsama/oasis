@@ -408,3 +408,6 @@
 [submodule "pkg/vi/src"]
 	path = pkg/vi/src
 	url = https://github.com/LaithOsama/nextvi.git
+[submodule "pkg/zzz/src"]
+	path = pkg/zzz/src
+	url = https://github.com/jirutka/zzz
