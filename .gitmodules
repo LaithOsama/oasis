@@ -356,7 +356,7 @@
 	ignore = all
 [submodule "pkg/velox/src"]
 	path = pkg/velox/src
-	url = https://github.com/michaelforney/velox
+	url = https://github.com/LaithOsama/velox.git
 [submodule "pkg/vis/src"]
 	path = pkg/vis/src
 	url = https://github.com/martanne/vis
